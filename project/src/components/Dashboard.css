@@ -1,0 +1,189 @@
+.dashboard-container {
+    min-height: 100vh;
+    background-color: #f8fafc;
+    padding-bottom: 4rem;
+}
+
+.dashboard-header {
+    background: var(--auth-background-gradient);
+    color: white;
+    padding: 4rem 0;
+    margin-bottom: -4rem; /* Overlap with grid */
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.user-welcome h1 {
+    font-size: 2.5rem;
+    font-weight: 800;
+    margin-bottom: 0.5rem;
+}
+
+.user-welcome .highlight {
+    color: #ecfeff;
+}
+
+.user-welcome p {
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+.dashboard-main {
+    position: relative;
+    z-index: 10;
+}
+
+.dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 2rem;
+}
+
+.dashboard-card {
+    background: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border: 1px solid #e2e8f0;
+}
+
+.dashboard-card h3 {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 1.5rem;
+    padding-bottom: 0.75rem;
+    border-bottom: 2px solid #f1f5f9;
+}
+
+/* Profile Card */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 1.25rem;
+    margin-bottom: 1.5rem;
+}
+
+.info-item label {
+    display: block;
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-bottom: 0.25rem;
+}
+
+.info-item p {
+    font-weight: 600;
+    color: #0f172a;
+    font-size: 1.1rem;
+}
+
+/* Stats Card */
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
+    text-align: center;
+}
+
+.stat-item {
+    padding: 1rem;
+    background: #f1f5f9;
+    border-radius: 0.75rem;
+    transition: transform 0.2s;
+}
+
+.stat-item:hover {
+    transform: translateY(-4px);
+    background: var(--cyan-50);
+}
+
+.stat-value {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+    color: var(--cyan-600);
+}
+
+.stat-label {
+    font-size: 0.875rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+/* Suggested Services */
+.suggested-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+
+.suggested-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem;
+    border: 1px solid #f1f5f9;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.suggested-item:hover {
+    border-color: var(--cyan-500);
+    background: var(--cyan-50);
+}
+
+.suggested-item .icon-wrapper {
+    width: 3rem;
+    height: 3rem;
+    color: var(--cyan-600);
+}
+
+.suggested-item span {
+    font-weight: 600;
+    font-size: 0.9rem;
+    color: #334155;
+}
+
+/* Empty State */
+.empty-state {
+    text-align: center;
+    padding: 3rem 0;
+    color: #94a3b8;
+}
+
+/* Responsive */
+@media (min-width: 768px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .profile-card {
+        grid-row: span 2;
+    }
+}
+
+@media (min-width: 1024px) {
+    .dashboard-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* Shared Buttons from Home.css */
+.btn-secondary-outline {
+    background: transparent;
+    border: 1.5px solid #e2e8f0;
+    color: #64748b;
+    width: 100%;
+}
+
+.btn-secondary-outline:hover {
+    border-color: var(--cyan-600);
+    color: var(--cyan-600);
+    background: var(--cyan-50);
+}
