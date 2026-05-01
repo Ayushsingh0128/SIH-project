@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 const AuthModal = ({ initialView, onClose, onAuthSuccess }) => {
+    const navigate = useNavigate();
     const [formView, setFormView] = useState(initialView);
     const [loginType, setLoginType] = useState('user');
     const [formData, setFormData] = useState({
@@ -238,7 +240,7 @@ const AuthModal = ({ initialView, onClose, onAuthSuccess }) => {
                             <div className="form-links">
                                 <p>Already have an account? <a href="#" onClick={(e) => { e.preventDefault(); showForm('login'); }}>Log In</a></p>
                                 <p style={{ marginTop: '0.5rem', borderTop: '1px solid var(--gray-200)', paddingTop: '0.5rem', width: '100%', textAlign: 'center', fontSize: '0.85rem' }}>
-                                    Are you a Professional? <a href="/worker-register" onClick={() => onClose()}>Join as a Worker</a>
+                                    Are you a Professional? <a href="/worker-register" onClick={(e) => { e.preventDefault(); navigate('/worker-register'); onClose(); }}>Join as a Worker</a>
                                 </p>
                             </div>
                         </form>
